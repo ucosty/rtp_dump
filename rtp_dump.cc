@@ -135,7 +135,7 @@ void read_packet(ifstream &file)
 				endian_swap_wide(rtp->ssrc);
 				uint16_t payload_length = udp_payload_len - sizeof(rtp_header_t);
 
-				write_payload(rtp->ssrc, packet_buffer + sizeof(udp_header) + sizeof(rtp_header_s), payload_length);
+				write_payload(rtp->ssrc, packet_buffer + sizeof(rtp_header_s), payload_length);
 				rtp_packets++;
 			}
 		}
