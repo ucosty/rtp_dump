@@ -130,7 +130,7 @@ void read_packet(ifstream &file)
 			{
 				rtcp_packets++;
 			}
-			else //if(rtp->type == 111)
+			else if(rtp->type == 111)
 			{
 				endian_swap_wide(rtp->ssrc);
 				uint16_t payload_length = udp_payload_len - sizeof(rtp_header_t);
